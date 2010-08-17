@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+﻿using System.Collections.Generic;
+using TwitterLib;
 
 namespace TwitterWall
 {
-    public partial class MainPage : UserControl
+    public partial class MainPage
     {
         public MainPage()
         {
             InitializeComponent();
+
+            var twitterSearch = new TwitterSearch();
+            twitterSearch.Search("frontend2010", Done);
+        }
+
+        private void Done(List<Tweet> tweets)
+        {
+            
         }
     }
 }

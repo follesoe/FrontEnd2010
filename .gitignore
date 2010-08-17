@@ -11,3 +11,4 @@ _ReSharper.*
 *.cache
 *~
 *.swp
+*.xap
