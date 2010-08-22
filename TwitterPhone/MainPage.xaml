@@ -24,9 +24,13 @@
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
-    <Grid x:Name="LayoutRoot" Background="Transparent">        
-        <pivot:PivotControl 
-            Name="_pivot" VerticalAlignment="Top" />
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="700"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <pivot:PivotControl Grid.Row="0" Name="_pivot" Margin="0,0,0,45" d:LayoutOverrides="GridBox" />
     </Grid>
    
 

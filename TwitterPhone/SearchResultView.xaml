@@ -36,7 +36,7 @@
 	</UserControl.Foreground>
 
     <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding Source={StaticResource TwitterSampleData}}">
-    	<ListBox ItemTemplate="{StaticResource TweetsItemTemplate}" ItemsSource="{Binding Tweets}" Margin="8"/>
+    	<ListBox ItemTemplate="{StaticResource TweetsItemTemplate}" ItemsSource="{Binding Tweets}" Margin="8,0"/>
     </Grid>
     
 </UserControl>
