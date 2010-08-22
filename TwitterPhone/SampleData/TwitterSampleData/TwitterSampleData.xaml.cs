@@ -118,25 +118,6 @@ namespace Expression.Blend.SampleData.TwitterSampleData
 			}
 		}
 
-		private string _ProfileImageUrl = string.Empty;
-
-		public string ProfileImageUrl
-		{
-			get
-			{
-				return this._ProfileImageUrl;
-			}
-
-			set
-			{
-				if (this._ProfileImageUrl != value)
-				{
-					this._ProfileImageUrl = value;
-					this.OnPropertyChanged("ProfileImageUrl");
-				}
-			}
-		}
-
 		private System.Windows.Media.ImageSource _ProfileImage = null;
 
 		public System.Windows.Media.ImageSource ProfileImage

@@ -12,13 +12,12 @@
 	<UserControl.Resources>
 		<SampleData:TwitterSampleData x:Key="TwitterSampleData" d:IsDataSource="True"/>		
 		<DataTemplate x:Key="TweetsItemTemplate">
-			<StackPanel>
-				<TextBlock Text="{Binding CreatedAt}"/>
-				<TextBlock Text="{Binding FromUser}"/>
-				<Image Source="{Binding ProfileImage}" HorizontalAlignment="Left" Height="64" Width="64"/>
-				<TextBlock Text="{Binding ProfileImageUrl}"/>
-				<TextBlock Text="{Binding Text}"/>
-			</StackPanel>
+			<Grid Width="445">
+				<TextBlock Text="{Binding CreatedAt}" VerticalAlignment="Top" Margin="0,12,0,0" HorizontalAlignment="Right" Width="200" FontFamily="Segoe WP Semibold" FontWeight="Bold" Foreground="{StaticResource PhoneAccentBrush}"/>
+				<TextBlock Text="{Binding FromUser}" Margin="0,12,204,0" VerticalAlignment="Top" FontFamily="Segoe WP Semibold" FontWeight="Bold" Foreground="{StaticResource PhoneAccentBrush}"/>
+				<Image Source="{Binding ProfileImage}" HorizontalAlignment="Left" Width="85" Margin="0,50,0,0" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Height="105"/>
+				<TextBlock Text="{Binding Text}" Margin="101,43,5,8" TextWrapping="Wrap" FontSize="21.333"/>
+			</Grid>
 		</DataTemplate>
 	</UserControl.Resources>
     
