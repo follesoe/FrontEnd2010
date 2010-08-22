@@ -4,7 +4,7 @@ using System.Windows;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
-namespace TwitterPhone
+namespace TwitterPhone.Model
 {
     public class SearchViewModel : ViewModelBase
     {        

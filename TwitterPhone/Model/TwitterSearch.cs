@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.ServiceModel.Syndication;
 using Microsoft.Phone.Reactive;
 
-namespace TwitterPhone
+namespace TwitterPhone.Model
 {
     public class TwitterSearch
     {

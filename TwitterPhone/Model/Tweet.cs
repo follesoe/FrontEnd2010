@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TwitterPhone
+namespace TwitterPhone.Model
 {
     public class Tweet
     {
