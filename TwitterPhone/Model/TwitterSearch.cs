@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using System.Xml;
 using System.Net;
 using System.Linq;
 using System.Collections.Generic;
 using System.ServiceModel.Syndication;
-using Microsoft.Phone.Reactive;
 
 namespace TwitterPhone.Model
 {
@@ -14,24 +15,27 @@ namespace TwitterPhone.Model
         private const string ApiUrl = "http://search.twitter.com/search.atom?q={0}&since_id={1}";
         private string _sinceId;
         private string _keyword;
-        private IDisposable timer;
 
         public void Search(string keyword, Action<List<Tweet>> callback)
         {
-            _sinceId = string.Empty;
+            if (keyword != _keyword)
+                _sinceId = "0";
 
-            if(timer != null)
-                timer.Dispose();
+            _keyword = keyword;
             
-            var interval = Observable.Interval(TimeSpan.FromMilliseconds(1500)).TimeInterval();
-            timer = interval.Subscribe(x =>
-                                     {
-                                         var url = new Uri(string.Format(ApiUrl, keyword, _sinceId));
+            var url = new Uri(string.Format(ApiUrl, keyword, _sinceId));
 
-                                         var client = new WebClient();
-                                         client.DownloadStringCompleted += (o, e) => callback(ParseXml(e.Result));
-                                         client.DownloadStringAsync(url);
-                                     });
+            var client = new WebClient();
+            client.DownloadStringCompleted += (o, e) => callback(e.Error == null ? ParseXml(e.Result) : ReportError(e.Error));
+            client.DownloadStringAsync(url);
+        }
+
+        private static List<Tweet> ReportError(Exception ex)
+        {
+            return new List<Tweet>
+                       {
+                           new Tweet {CreatedAt = DateTime.Now, FromUser = "Error", Text = ex.Message}
+                       };        
         }
 
         private List<Tweet> ParseXml(string xmlString)
@@ -46,6 +50,7 @@ namespace TwitterPhone.Model
                                   CreatedAt = item.PublishDate.DateTime,
                                   FromUser = item.Authors.First().Name,
                                   ProfileImageUrl = item.Links.Where(l => l.RelationshipType == "image").Single().Uri,
+                                  ProfileImage = new BitmapImage(item.Links.Where(l => l.RelationshipType == "image").Single().Uri),
                                   Id = item.Id.Split(',')[1].Split(':')[1]
                              };
 

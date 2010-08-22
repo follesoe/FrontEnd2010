@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media.Imaging;
 
 namespace TwitterPhone.Model
 {
@@ -8,6 +9,7 @@ namespace TwitterPhone.Model
         public string FromUser { get; set; }
         public string Text { get; set; }
         public Uri ProfileImageUrl { get; set; }
+        public BitmapImage ProfileImage { get; set; }
         public DateTime CreatedAt { set; get; }
     }
 }

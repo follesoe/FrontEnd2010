@@ -1,0 +1,43 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:TwitterPhone.Model" 
+	xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.TwitterSampleData" 
+	x:Class="TwitterPhone.SearchResultView"
+    mc:Ignorable="d"
+    d:DesignHeight="700" d:DesignWidth="480">
+
+	<UserControl.Resources>
+		<SampleData:TwitterSampleData x:Key="TwitterSampleData" d:IsDataSource="True"/>		
+		<DataTemplate x:Key="TweetsItemTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding CreatedAt}"/>
+				<TextBlock Text="{Binding FromUser}"/>
+				<Image Source="{Binding ProfileImage}" HorizontalAlignment="Left" Height="64" Width="64"/>
+				<TextBlock Text="{Binding ProfileImageUrl}"/>
+				<TextBlock Text="{Binding Text}"/>
+			</StackPanel>
+		</DataTemplate>
+	</UserControl.Resources>
+    
+    <UserControl.DataContext>
+        <local:SearchViewModel />
+    </UserControl.DataContext>
+    
+	<UserControl.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</UserControl.FontFamily>
+	<UserControl.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</UserControl.FontSize>
+	<UserControl.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</UserControl.Foreground>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding Source={StaticResource TwitterSampleData}}">
+    	<ListBox ItemTemplate="{StaticResource TweetsItemTemplate}" ItemsSource="{Binding Tweets}" Margin="8"/>
+    </Grid>
+    
+</UserControl>
