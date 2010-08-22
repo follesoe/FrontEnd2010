@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterWall", "TwitterWall\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterWall.Web", "TwitterWall.Web\TwitterWall.Web.csproj", "{810C286B-60C7-4ECC-B45E-0A12D9C93F64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterPhone", "TwitterPhone\TwitterPhone.csproj", "{94CC722E-3231-443A-BD8A-1EB7D6628BAC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,12 +19,6 @@ Global
 		{810C286B-60C7-4ECC-B45E-0A12D9C93F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810C286B-60C7-4ECC-B45E-0A12D9C93F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810C286B-60C7-4ECC-B45E-0A12D9C93F64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94CC722E-3231-443A-BD8A-1EB7D6628BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94CC722E-3231-443A-BD8A-1EB7D6628BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94CC722E-3231-443A-BD8A-1EB7D6628BAC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{94CC722E-3231-443A-BD8A-1EB7D6628BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94CC722E-3231-443A-BD8A-1EB7D6628BAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94CC722E-3231-443A-BD8A-1EB7D6628BAC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
