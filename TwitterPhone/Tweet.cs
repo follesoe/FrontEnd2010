@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TwitterLib
+namespace TwitterPhone
 {
     public class Tweet
     {

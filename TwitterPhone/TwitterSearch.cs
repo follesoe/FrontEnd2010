@@ -5,21 +5,33 @@ using System.Net;
 using System.Linq;
 using System.Collections.Generic;
 using System.ServiceModel.Syndication;
+using Microsoft.Phone.Reactive;
 
-namespace TwitterLib
+namespace TwitterPhone
 {
     public class TwitterSearch
     {
         private const string ApiUrl = "http://search.twitter.com/search.atom?q={0}&since_id={1}";
         private string _sinceId;
+        private string _keyword;
+        private IDisposable timer;
 
         public void Search(string keyword, Action<List<Tweet>> callback)
         {
-            var url = new Uri(string.Format(ApiUrl, keyword, _sinceId));
+            _sinceId = string.Empty;
 
-            var client = new WebClient();
-            client.DownloadStringCompleted += (o, e) => callback(ParseXml(e.Result));
-            client.DownloadStringAsync(url);
+            if(timer != null)
+                timer.Dispose();
+            
+            var interval = Observable.Interval(TimeSpan.FromMilliseconds(1500)).TimeInterval();
+            timer = interval.Subscribe(x =>
+                                     {
+                                         var url = new Uri(string.Format(ApiUrl, keyword, _sinceId));
+
+                                         var client = new WebClient();
+                                         client.DownloadStringCompleted += (o, e) => callback(ParseXml(e.Result));
+                                         client.DownloadStringAsync(url);
+                                     });
         }
 
         private List<Tweet> ParseXml(string xmlString)
@@ -38,7 +50,9 @@ namespace TwitterLib
                              };
 
             var tweets = tweetQuery.ToList();
-            _sinceId = tweets.First().Id;
+            if(tweets.Count > 0)
+                _sinceId = tweets.First().Id;
+
             return tweets;
         }
     }

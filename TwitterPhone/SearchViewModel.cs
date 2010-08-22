@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-
+using System.Windows;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
-namespace TwitterLib
+namespace TwitterPhone
 {
     public class SearchViewModel : ViewModelBase
     {        
         public ObservableCollection<Tweet> Tweets { get; private set; }
         public RelayCommand SearchCommand { get; private set; }
-        private TwitterSearch _search;
+        private readonly TwitterSearch _search;
         private string _keyword;
         
         public string Keyword
@@ -39,9 +39,19 @@ namespace TwitterLib
             }
         }
 
+        private int counter = 0;
+
+        public void AddRandom()
+        {
+            counter++;
+            var t = new Tweet();
+            t.Text = "Hello World! " + counter;
+            Tweets.Insert(0, t);
+        }
+
         private void AddTweets(List<Tweet> newTweets)
         {
-            newTweets.ForEach(t => Tweets.Add(t));
+            Deployment.Current.Dispatcher.BeginInvoke(() => newTweets.ForEach(t => Tweets.Insert(0, t)));
         }
     }
 }

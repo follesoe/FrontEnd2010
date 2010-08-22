@@ -1,0 +1,15 @@
+﻿<TwitterLib:SearchViewModel xmlns:TwitterLib="clr-namespace:TwitterLib;assembly=TwitterLib" xmlns:GalaSoft_MvvmLight_Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.WP7" IsInDesignMode="True" IsInDesignModeStatic="False" Keyword="Cras aliquam">
+
+	<TwitterLib:SearchViewModel.Tweets>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Aaberg, Jesper" Id="Maecenas aenean phasellus adipiscing integer" Text="Orci pulvinar fusce pede"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Adams, Ellen" Id="Convallis parturient" Text="Sagittis pretium tempus rhoncus sodales viverra leo tortor"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Adams, Terry" Id="Vestibulum accumsan aliquam dis fusce" Text="Quam senectus lorem morbi sociosqu quis mus nulla"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Adams, Terry" Id="Lorem eleifend morbi" Text="Turpis aliquam urna suscipit torquent varius nec aenean mauris"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Penor, Lori" Id="Elit auctor nulla" Text="Integer cras duis ultrices quisque"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Pfeiffer, Michael" Id="Facilisi dolor vestibulum" Text="Proin nunc amet vehicula non volutpat ante nullam"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Philips, Carol" Id="Faucibus hac" Text="Vivamus arcu augue diam eget"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Poe, Toni" Id="Litora luctus imperdiet magnis" Text="Dolor per fames felis ipsum elit aptent"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Hicks, Cassie" Id="Inceptos lorem mauris penatibus magna" Text="Sed justo auctor lacus enim lorem aliquam maecenas"/>
+		<TwitterLib:Tweet CreatedAt="08/20/2010 22:30:54" FromUser="Argentiero, Luca" Id="Nostra odio parturient orci" Text="Erat sem congue aliquet cursus dictum lectus eros nibh"/>
+	</TwitterLib:SearchViewModel.Tweets>
+</TwitterLib:SearchViewModel>
