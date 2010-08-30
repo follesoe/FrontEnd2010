@@ -14,24 +14,20 @@ namespace TwitterWall
         private const string ApiUrl = "http://search.twitter.com/search.atom?q={0}&since_id={1}";
         private string _sinceId;
         private string _keyword;
-        private IDisposable timer;
 
         public void Search(string keyword, Action<List<Tweet>> callback)
         {
-            _sinceId = string.Empty;
+            if (keyword != _keyword)
+            {
+                _sinceId = string.Empty;
+                _keyword = keyword;
+            }
 
-            if(timer != null)
-                timer.Dispose();
-            
-            var interval = Observable.Interval(TimeSpan.FromMilliseconds(1500)).TimeInterval();
-            timer = interval.Subscribe(x =>
-                                     {
-                                         var url = new Uri(string.Format(ApiUrl, keyword, _sinceId));
+            var url = new Uri(string.Format(ApiUrl, keyword, _sinceId));
 
-                                         var client = new WebClient();
-                                         client.DownloadStringCompleted += (o, e) => callback(ParseXml(e.Result));
-                                         client.DownloadStringAsync(url);
-                                     });
+            var client = new WebClient();
+            client.DownloadStringCompleted += (o, e) => callback(ParseXml(e.Result));
+            client.DownloadStringAsync(url);
         }
 
         private List<Tweet> ParseXml(string xmlString)
