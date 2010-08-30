@@ -24,7 +24,7 @@ namespace TwitterWall
 
         }
 
-        private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
+        private static void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
             if (System.Diagnostics.Debugger.IsAttached) return;
             
