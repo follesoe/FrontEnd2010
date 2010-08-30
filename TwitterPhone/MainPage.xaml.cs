@@ -50,7 +50,6 @@ namespace TwitterPhone
             bool firstItem = (_pivot.SelectedIndex == 0);
 
             ((ApplicationBarIconButton) ApplicationBar.Buttons[1]).IsEnabled = !firstItem;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).IsEnabled = !firstItem;
         }
     }
 }
