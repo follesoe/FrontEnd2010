@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void searchButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ((SearchViewModel) DataContext).Search();
+        }
     }
 }
