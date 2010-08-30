@@ -113,9 +113,7 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <DesignData Include="SampleData\SearchViewModelSampleData.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-    </DesignData>
+    <Folder Include="SampleData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
