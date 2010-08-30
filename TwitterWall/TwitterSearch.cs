@@ -4,6 +4,7 @@ using System.Xml;
 using System.Net;
 using System.Linq;
 using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 using System.ServiceModel.Syndication;
 
 
@@ -46,6 +47,7 @@ namespace TwitterWall
                                   CreatedAt = item.PublishDate.DateTime,
                                   FromUser = item.Authors.First().Name,
                                   ProfileImageUrl = item.Links.Where(l => l.RelationshipType == "image").Single().Uri,
+                                  ProfileImage = new BitmapImage(item.Links.Where(l => l.RelationshipType == "image").Single().Uri),
                                   Id = item.Id.Split(',')[1].Split(':')[1]
                              };
 

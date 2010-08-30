@@ -8,8 +8,8 @@
              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
     x:Class="TwitterWall.MainPage"
     d:DesignWidth="1024" d:DesignHeight="800" mc:Ignorable="d">
-	<UserControl.Resources>
-		<DataTemplate x:Key="TweetTemplate">
+	<UserControl.Resources>        
+        <DataTemplate x:Key="TweetTemplate">
 			<Grid Width="185.999" Height="99.213">
 				<Rectangle Margin="0,0,8,0" Stroke="Black" RadiusX="8" RadiusY="5" Width="177.998992919922">
 					<Rectangle.Fill>
