@@ -16,7 +16,7 @@ namespace TwitterWall
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            RootVisual = new MainPage();
+            RootVisual = new FrontEndWall();
         }
 
         private static void Application_Exit(object sender, EventArgs e)

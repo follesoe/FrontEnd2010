@@ -91,10 +91,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrontEndWall.xaml.cs">
+      <DependentUpon>FrontEndWall.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleData\TwitterSampleData\TwitterSampleData.xaml.cs">
+      <DependentUpon>TwitterSampleData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchViewModel.cs" />
     <Compile Include="Tweet.cs" />
   </ItemGroup>
@@ -103,15 +109,61 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="FrontEndWall.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SampleData\TwitterSampleData\TwitterSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <DesignTimeOnly Include="SampleData\TwitterSampleData\TwitterSampleData.xsd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="mockup_Images\Background.png" />
+    <Resource Include="mockup_Images\InputField.png" />
+    <Resource Include="mockup_Images\Layer 1.png" />
+    <Resource Include="mockup_Images\Layer 10.png" />
+    <Resource Include="mockup_Images\Layer 11.png" />
+    <Resource Include="mockup_Images\Layer 12.png" />
+    <Resource Include="mockup_Images\Layer 13.png" />
+    <Resource Include="mockup_Images\Layer 3.png" />
+    <Resource Include="mockup_Images\Layer 4.png" />
+    <Resource Include="mockup_Images\Layer 5.png" />
+    <Resource Include="mockup_Images\Layer 6.png" />
+    <Resource Include="mockup_Images\Layer 7.png" />
+    <Resource Include="mockup_Images\Layer 8.png" />
+    <Resource Include="mockup_Images\Layer 9.png" />
+    <Resource Include="mockup_Images\logo.png" />
+    <Resource Include="mockup_Images\ProfileImage.png" />
+    <Resource Include="mockup_Images\Radial Gradient.png" />
+    <Resource Include="mockup_Images\Vector Smart Object %28Layer Mask%29.png" />
+    <Resource Include="mockup_Images\Vector Smart Object copy %28Layer Mask%29.png" />
+    <Resource Include="mockup_Images\Vector Smart Object copy.png" />
+    <Resource Include="mockup_Images\Vector Smart Object.png" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\alexander-arnesen_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\brian-fling_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\christian-heilmann_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\dan-rubin_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\daniel-burka_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\daniel-staver_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\elliot-jay-stocks_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\image01.png" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\image02.png" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\image03.png" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\image04.png" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\image05.png" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\jonas-follesoe_galleryline.jpg" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\kwame-nyanning_galleryline.png" />
+    <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\matthew-smith_galleryline.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -61,7 +61,7 @@ namespace TwitterWall
                                  Text = item.Title.Text,
                                  CreatedAt = item.PublishDate.DateTime,
                                  FromUser = item.Authors.First().Name,
-                                 ProfileImageUrl = item.Links.Where(l => l.RelationshipType == "image").Single().Uri,
+                                 ProfileImageUrl = item.Links.Where(l => l.RelationshipType == "image").Single().Uri.AbsolutePath,
                                  ProfileImage = new BitmapImage(item.Links.Where(l => l.RelationshipType == "image").Single().Uri),
                                  Id = item.Id.Split(',')[1].Split(':')[1]
                              };
