@@ -73,9 +73,10 @@
     <Reference Include="Microsoft.Expression.Effects" />
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="mscorlib" />
-    <Reference Include="System.CoreEx, Version=1.0.2617.204, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.CoreEx, Version=1.0.2677.204, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Interactive, Version=1.0.2677.204, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Observable, Version=1.0.0.204, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Reactive, Version=1.0.2617.204, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Reactive, Version=1.0.2677.204, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Syndication, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />

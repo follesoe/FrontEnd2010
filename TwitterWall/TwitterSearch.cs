@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using System.ServiceModel.Syndication;
 
-
 namespace TwitterWall
 {
     public class TwitterSearch
