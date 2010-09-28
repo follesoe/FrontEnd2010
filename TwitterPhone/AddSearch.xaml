@@ -12,19 +12,16 @@
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="99"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="24,24,0,12">
-            <TextBlock x:Name="ApplicationTitle" Text="TWITTER SEARCH" />
-            <TextBlock x:Name="PageTitle" Text="add search" Margin="-3,-8,0,0"/>
-        </StackPanel>
+    	<TextBlock x:Name="ApplicationTitle" Text="TWITTER SEARCH" FontFamily="{StaticResource PhoneFontFamilySemiBold}" FontSize="{StaticResource PhoneFontSizeSmall}" Margin="24,24,0,19" d:LayoutOverrides="Height" Foreground="{StaticResource PhoneForegroundBrush}" />
+    	<TextBlock x:Name="PageTitle" Text="add search" Margin="21,0,0,-1" FontFamily="{StaticResource PhoneFontFamilySemiBold}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Foreground="{StaticResource PhoneForegroundBrush}"/>
 
         <Grid x:Name="ContentGrid" Grid.Row="1">
         	<Button x:Name="_add" Content="Add" Height="82" Margin="45,151,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="193" Click="Add"/>
         	<Button x:Name="_cancel" Content="Cancel" HorizontalAlignment="Right" Height="82" Margin="0,151,45,0" VerticalAlignment="Top" Width="193" Click="Cancel"/>
-        	<TextBox x:Name="_keyword" Height="69" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        	<TextBox x:Name="_keyword" Height="83" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,25,0,0"/>
         </Grid>
     </Grid>
 
