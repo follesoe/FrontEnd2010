@@ -1,32 +1,36 @@
-﻿<phone:PhoneApplicationPage 
-    x:Class="TwitterPhone.MainPage"
+﻿<phone:PhoneApplicationPage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" xmlns:local="clr-namespace:TwitterPhone" 
+    x:Class="TwitterPhone.MainPage"
     SupportedOrientations="Portrait" 
     Orientation="Portrait"
     mc:Ignorable="d"
     d:DesignWidth="480" 
-    d:DesignHeight="768"
+    d:DesignHeight="696"
     shell:SystemTray.IsVisible="True">
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True">
-            <shell:ApplicationBarIconButton x:Name="_add" IconUri="/Images/add.png" Text="add" />
-            <shell:ApplicationBarIconButton x:Name="_remove" IconUri="/Images/remove.png" Text="remove" />
-            <shell:ApplicationBarIconButton x:Name="_refresh" IconUri="/Images/refresh.png" Text="refresh" />
+            <shell:ApplicationBarIconButton x:Name="_add" IconUri="/Images/add.png" Text="add" Click="AddSearch" />
+            <shell:ApplicationBarIconButton x:Name="_remove" IconUri="/Images/remove.png" Text="remove" IsEnabled="False" Click="RemoveSearch" />
+            <shell:ApplicationBarIconButton x:Name="_refresh" IconUri="/Images/refresh.png" Text="refresh" Click="RefreshSearch" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="700"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-    </Grid>
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+
+		<controls:Pivot Title="twitter search" x:Name="_searchPivot">
+			<controls:PivotItem Header="nnug" Margin="12,0">
+				<local:SearchResultView x:Name="_nnugSearch"/>
+			</controls:PivotItem>
+		</controls:Pivot>
+
+	</Grid>
    
 
 </phone:PhoneApplicationPage>

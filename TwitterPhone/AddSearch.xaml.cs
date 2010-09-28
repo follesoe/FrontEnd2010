@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using TwitterPhone.Model;
 
 namespace TwitterPhone
 {
@@ -13,7 +14,8 @@ namespace TwitterPhone
         {
             if(_keyword.Text.Length > 0)
             {              
-                NavigationService.GoBack();                
+                NavigationService.GoBack();
+                GalaSoft.MvvmLight.Messaging.Messenger.Default.Send(new AddSearchMessage { Keyword = _keyword.Text });
             }
             else
             {
