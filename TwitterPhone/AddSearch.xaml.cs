@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using TwitterPhone.Model;
 
 namespace TwitterPhone
 {
@@ -13,11 +12,7 @@ namespace TwitterPhone
         private void Add(object sender, RoutedEventArgs e)
         {
             if(_keyword.Text.Length > 0)
-            {
-                var viewModel = new SearchViewModel();
-                viewModel.Keyword = _keyword.Text;
-                viewModel.Search();
-                MainPage.SearchItems.Add(viewModel);                
+            {              
                 NavigationService.GoBack();                
             }
             else

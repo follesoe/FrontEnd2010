@@ -6,9 +6,6 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:pivot="clr-namespace:Phone.Controls.Samples;assembly=Phone.Controls.Samples" FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" 
     Orientation="Portrait"
     mc:Ignorable="d"
@@ -18,9 +15,9 @@
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True">
-            <shell:ApplicationBarIconButton x:Name="_add" IconUri="/Images/add.png" Text="add" Click="AddSearch" />
-            <shell:ApplicationBarIconButton x:Name="_remove" IconUri="/Images/remove.png" Text="remove" Click="RemoveSearch" />
-            <shell:ApplicationBarIconButton x:Name="_refresh" IconUri="/Images/refresh.png" Text="refresh" Click="Refresh" />
+            <shell:ApplicationBarIconButton x:Name="_add" IconUri="/Images/add.png" Text="add" />
+            <shell:ApplicationBarIconButton x:Name="_remove" IconUri="/Images/remove.png" Text="remove" />
+            <shell:ApplicationBarIconButton x:Name="_refresh" IconUri="/Images/refresh.png" Text="refresh" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
@@ -29,8 +26,6 @@
             <RowDefinition Height="700"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        <pivot:PivotControl Grid.Row="0" Name="_pivot" Margin="0,0,0,45" d:LayoutOverrides="GridBox" />
     </Grid>
    
 

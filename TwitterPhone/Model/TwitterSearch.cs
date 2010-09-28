@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
-using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 using System.Xml;
 using System.Net;
 using System.Linq;
 using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 using System.ServiceModel.Syndication;
 
 namespace TwitterPhone.Model
