@@ -5,15 +5,15 @@
 -->
 <SampleData:SampleDataSource xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
   <SampleData:SampleDataSource.Collection>
-    <SampleData:Item Property1="Aenean maecenas cras duis" Property2="True" />
-    <SampleData:Item Property1="Praesent mauris nunc nullam" Property2="False" />
-    <SampleData:Item Property1="Amet aptent class" Property2="True" />
-    <SampleData:Item Property1="Auctor accumsan aliquam nam" Property2="False" />
-    <SampleData:Item Property1="Bibendum congue integer quisque" Property2="True" />
-    <SampleData:Item Property1="Vivamus cursus sed" Property2="False" />
-    <SampleData:Item Property1="Ante aliquam" Property2="True" />
-    <SampleData:Item Property1="Dictumst dictum" Property2="False" />
-    <SampleData:Item Property1="Eleifend dis lectus" Property2="True" />
-    <SampleData:Item Property1="Libero aliquet" Property2="False" />
+    <SampleData:Item Property1="Nam class" Property2="True" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image01.png" />
+    <SampleData:Item Property1="Curae donec aliquam" Property2="False" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image02.png" />
+    <SampleData:Item Property1="Maecenas etiam fusce" Property2="True" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image03.png" />
+    <SampleData:Item Property1="Lorem aenean cras" Property2="False" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image04.png" />
+    <SampleData:Item Property1="Morbi sed praesent nulla" Property2="True" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image05.png" />
+    <SampleData:Item Property1="Integer accumsan quisque mauris" Property2="False" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image01.png" />
+    <SampleData:Item Property1="Bibendum proin dictumst" Property2="True" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image02.png" />
+    <SampleData:Item Property1="Nullam duis augue" Property2="False" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image03.png" />
+    <SampleData:Item Property1="Vivamus aliquam dis" Property2="True" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image04.png" />
+    <SampleData:Item Property1="Eleifend aliquet facilisi" Property2="False" Property3="/TwitterPhone;component/SampleData/SampleDataSource/SampleDataSource_Files/image05.png" />
   </SampleData:SampleDataSource.Collection>
 </SampleData:SampleDataSource>

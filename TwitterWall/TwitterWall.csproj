@@ -105,10 +105,10 @@
     <Compile Include="Tweet.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="FrontEndWall.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
@@ -128,12 +128,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="mockup_Images\Background.png" />
-    <Resource Include="mockup_Images\InputField.png" />
     <Resource Include="mockup_Images\Layer 1.png" />
     <Resource Include="mockup_Images\Layer 10.png" />
     <Resource Include="mockup_Images\Layer 11.png" />
     <Resource Include="mockup_Images\Layer 12.png" />
-    <Resource Include="mockup_Images\Layer 13.png" />
     <Resource Include="mockup_Images\Layer 3.png" />
     <Resource Include="mockup_Images\Layer 4.png" />
     <Resource Include="mockup_Images\Layer 5.png" />
@@ -144,10 +142,6 @@
     <Resource Include="mockup_Images\logo.png" />
     <Resource Include="mockup_Images\ProfileImage.png" />
     <Resource Include="mockup_Images\Radial Gradient.png" />
-    <Resource Include="mockup_Images\Vector Smart Object %28Layer Mask%29.png" />
-    <Resource Include="mockup_Images\Vector Smart Object copy %28Layer Mask%29.png" />
-    <Resource Include="mockup_Images\Vector Smart Object copy.png" />
-    <Resource Include="mockup_Images\Vector Smart Object.png" />
     <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\alexander-arnesen_galleryline.jpg" />
     <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\brian-fling_galleryline.jpg" />
     <Resource Include="SampleData\TwitterSampleData\TwitterSampleData_Files\christian-heilmann_galleryline.jpg" />

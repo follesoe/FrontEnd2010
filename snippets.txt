@@ -1,28 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.ServiceModel.Syndication;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Xml;
-using GalaSoft.MvvmLight;
-
-namespace TwitterWall
-{
-    public class SearchViewModel : ViewModelBase
+    public class Tweet
     {
-        public ObservableCollection<Tweet> Tweets { get; private set; }
+        public string Id { get; set; }        
+        public string FromUser { get; set; }
+        public string Text { get; set; }
+        public string ProfileImageUrl { get; set; }
+        public ImageSource ProfileImage { get; set; }
+        public DateTime CreatedAt { set; get; }
+    }
 
+        public ObservableCollection<Tweet> Tweets { get; private set; }
+        
         private string _keyword;
         
         public string Keyword
@@ -34,16 +21,18 @@ namespace TwitterWall
                 RaisePropertyChanged("Keyword");
             }
 
-        } 
+        }  
 
+        
         public SearchViewModel()
         {
             Tweets = new ObservableCollection<Tweet>();      
         }
 
-        private const string ApiUrl = "http://search.twitter.com/search.atom?q={0}&since_id={1}";
-        private string _sinceId;
-
+        private void AddTweets(List<Tweet> newTweets)
+        {
+            newTweets.ForEach(t => Tweets.Insert(0, t));
+        }
 
         public void Search()
         {
@@ -77,10 +66,5 @@ namespace TwitterWall
             return tweets;
         }
 
-
-        private void AddTweets(List<Tweet> newTweets)
-        {
-            newTweets.ForEach(t => Tweets.Insert(0, t));
-        }
-    }
-}
+        private const string ApiUrl = "http://search.twitter.com/search.atom?q={0}&since_id={1}";
+        private string _sinceId;

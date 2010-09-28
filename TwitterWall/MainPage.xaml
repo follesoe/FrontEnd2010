@@ -11,10 +11,10 @@
     
     <UserControl.DataContext>
         <local:SearchViewModel />
-    </UserControl.DataContext>
+    </UserControl.DataContext>    
 
     <Grid x:Name="LayoutRoot" Background="White">
-    
+   
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -25,10 +25,23 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>  
         
-        <TextBox Text="{Binding Keyword, Mode=TwoWay}" Grid.Row="0" Grid.Column="0" />
-        <Button Content="Search" Grid.Row="0" Grid.Column="1" x:Name="searchButton" Click="searchButton_Click" />     
-        <ListBox ItemsSource="{Binding Path=Tweets}" DisplayMemberPath="Text" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
-            
-            
+        <TextBox 
+            Text="{Binding Keyword, Mode=TwoWay}" 
+            Grid.Row="0" 
+            Grid.Column="0" />       
+        
+        <ListBox 
+            ItemsSource="{Binding Path=Tweets}" 
+            DisplayMemberPath="Text" 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" /> 
+        
+        <Button Content="Search" 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                x:Name="searchButton" 
+                Click="searchButton_Click" />        
+        
     </Grid>
 </UserControl>

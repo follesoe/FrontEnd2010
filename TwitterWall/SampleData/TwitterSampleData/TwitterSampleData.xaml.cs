@@ -99,25 +99,6 @@ namespace Expression.Blend.SampleData.TwitterSampleData
 			}
 		}
 
-		private string _FromUser = string.Empty;
-
-		public string FromUser
-		{
-			get
-			{
-				return this._FromUser;
-			}
-
-			set
-			{
-				if (this._FromUser != value)
-				{
-					this._FromUser = value;
-					this.OnPropertyChanged("FromUser");
-				}
-			}
-		}
-
 		private string _Text = string.Empty;
 
 		public string Text
@@ -152,6 +133,25 @@ namespace Expression.Blend.SampleData.TwitterSampleData
 				{
 					this._ProfileImage = value;
 					this.OnPropertyChanged("ProfileImage");
+				}
+			}
+		}
+
+		private string _FromUser = string.Empty;
+
+		public string FromUser
+		{
+			get
+			{
+				return this._FromUser;
+			}
+
+			set
+			{
+				if (this._FromUser != value)
+				{
+					this._FromUser = value;
+					this.OnPropertyChanged("FromUser");
 				}
 			}
 		}

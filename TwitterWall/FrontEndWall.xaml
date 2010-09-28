@@ -1,26 +1,40 @@
-﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TwitterWall" xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.TwitterSampleData" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ec="http://schemas.microsoft.com/expression/2010/controls"
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:TwitterWall" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:ec="http://schemas.microsoft.com/expression/2010/controls"
+	mc:Ignorable="d"
 	x:Class="TwitterWall.FrontEndWall"
-	d:DesignWidth="1400.414" mc:Ignorable="d" d:DesignHeight="841.734" Width="Auto">
-
+	d:DesignWidth="1018.308" d:DesignHeight="821.151">
 	<UserControl.Resources>
 		<local:SearchViewModel x:Key="SearchViewModelDataSource" d:IsDataSource="True"/>
-		<SampleData:TwitterSampleData x:Key="TwitterSampleData" d:IsDataSource="True"/>
 		<DataTemplate x:Key="TweetsItemTemplate">
-			<Grid x:Name="Tweet" Height="172" Width="263" >
-				<Path x:Name="SpeechBubble" Data="F1M242.82,1.023C242.82,1.023 20.18,1.023 20.18,1.023 9.596,1.023 1.018,7.541 1.018,15.582 1.018,15.582 1.018,96.369 1.018,96.369 1.018,104.407 9.596,110.923 20.18,110.923 20.18,110.923 216.436,110.923 216.436,110.923 216.436,110.923 224.922,115.191 206.582,132.977 226.636,126.798 239.691,110.923 239.691,110.923 239.691,110.923 242.82,110.923 242.82,110.923 253.401,110.923 261.982,104.407 261.982,96.369 261.982,96.369 261.982,15.582 261.982,15.582 261.982,7.541 253.401,1.023 242.82,1.023z" Fill="#FFFFFFFF" Margin="0,0,0,38" UseLayoutRounding="False"/>
-				<TextBlock x:Name="Jonas_Follesø" Foreground="#FF2F99DF" FontSize="12" FontFamily="Segoe UI" Height="24.832" LineStackingStrategy="BlockLineHeight" LineHeight="12" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding FromUser}" Margin="90.078,0,10.648,20" VerticalAlignment="Bottom">
-					<TextBlock.RenderTransform>
-						<CompositeTransform ScaleY="1.242" ScaleX="1.242"/>
-					</TextBlock.RenderTransform>
-				</TextBlock>
-				<TextBlock x:Name="_31_08_2010____23_45_www_twitter_com_follesoe" Foreground="#FF989898" FontSize="9.585" FontFamily="Segoe UI" Height="32.281" LineStackingStrategy="BlockLineHeight" LineHeight="9.585" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding CreatedAt}" Width="168.854" Margin="90,0,4,-6" VerticalAlignment="Bottom">
-					<TextBlock.RenderTransform>
-						<MatrixTransform Matrix="1.242,0,0,1.242,0,0"/>
-					</TextBlock.RenderTransform>
-				</TextBlock>
-				<Image x:Name="ProfileImage" Height="54" Source="{Binding ProfileImage}" Width="54" HorizontalAlignment="Left" Margin="26,0,0,0" VerticalAlignment="Bottom"/>
-				<TextBlock x:Name="Working_on__WP7_sample_for_my__FrontEnd2010_presentation__Only_" Foreground="#FF000000" FontSize="15" FontFamily="Segoe UI" LineStackingStrategy="BlockLineHeight" LineHeight="15" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" Margin="27,20,11,47"/>
-			</Grid>
+			<StackPanel>
+				<TextBlock Text="{Binding CreatedAt}"/>
+				<TextBlock Text="{Binding FromUser}"/>
+				<Image Source="{Binding ProfileImage}" HorizontalAlignment="Left" Height="64" Width="64"/>
+				<TextBlock Text="{Binding Text}"/>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="TweetsItemTemplate1">
+			<StackPanel>
+				<Grid x:Name="Tweet" Height="172" Width="263" >
+					<Path x:Name="SpeechBubble" Data="F1M242.82,1.023C242.82,1.023 20.18,1.023 20.18,1.023 9.596,1.023 1.018,7.541 1.018,15.582 1.018,15.582 1.018,96.369 1.018,96.369 1.018,104.407 9.596,110.923 20.18,110.923 20.18,110.923 216.436,110.923 216.436,110.923 216.436,110.923 224.922,115.191 206.582,132.977 226.636,126.798 239.691,110.923 239.691,110.923 239.691,110.923 242.82,110.923 242.82,110.923 253.401,110.923 261.982,104.407 261.982,96.369 261.982,96.369 261.982,15.582 261.982,15.582 261.982,7.541 253.401,1.023 242.82,1.023z" Fill="#FFFFFFFF" Margin="0,0,0,38" UseLayoutRounding="False"/>
+					<TextBlock x:Name="Jonas_Follesø" Foreground="#FF2F99DF" FontSize="12" FontFamily="Segoe UI" Height="24.832" LineStackingStrategy="BlockLineHeight" LineHeight="12" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding FromUser}" Width="96.843" Margin="90,0,76,20" VerticalAlignment="Bottom">
+						<TextBlock.RenderTransform>
+							<MatrixTransform Matrix="1.242,0,0,1.242,0,0"/>
+						</TextBlock.RenderTransform>
+					</TextBlock>
+					<TextBlock x:Name="_31_08_2010____23_45_www_twitter_com_follesoe" Foreground="#FF989898" FontSize="9.585" FontFamily="Segoe UI" Height="32.281" LineStackingStrategy="BlockLineHeight" LineHeight="9.585" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding CreatedAt}" Width="168.854" Margin="90,0,4,-6" VerticalAlignment="Bottom">
+						<TextBlock.RenderTransform>
+							<MatrixTransform Matrix="1.242,0,0,1.242,0,0"/>
+						</TextBlock.RenderTransform>
+					</TextBlock>
+					<Image x:Name="ProfileImage" Height="54" Source="{Binding ProfileImage}" Width="54" HorizontalAlignment="Left" Margin="26,0,0,0" VerticalAlignment="Bottom"/>
+					<TextBlock x:Name="Working_on__WP7_sample_for_my__FrontEnd2010_presentation__Only_" Foreground="#FF000000" FontSize="15" FontFamily="Segoe UI" LineStackingStrategy="BlockLineHeight" LineHeight="15" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" Margin="27,20,11,47"/>
+				</Grid>
+			</StackPanel>
 		</DataTemplate>
 		<Style x:Key="ButtonStyle1" TargetType="Button">
 			<Setter Property="Template">
@@ -33,20 +47,21 @@
 							<VisualStateManager.VisualStateGroups>
 								<VisualStateGroup x:Name="CommonStates">
 									<VisualStateGroup.Transitions>
-										<VisualTransition GeneratedDuration="0:0:0.3"/>
+										<VisualTransition GeneratedDuration="0:0:0.2"/>
 									</VisualStateGroup.Transitions>
 									<VisualState x:Name="Disabled"/>
 									<VisualState x:Name="Normal"/>
 									<VisualState x:Name="MouseOver">
 										<Storyboard>
-											<ColorAnimation Duration="0" To="#FF26A2DE" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button" d:IsOptimized="True"/>
+											<ColorAnimation Duration="0" To="#FF3991DE" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button" d:IsOptimized="True"/>
 										</Storyboard>
 									</VisualState>
 									<VisualState x:Name="Pressed">
 										<Storyboard>
-											<DoubleAnimation Duration="0" To="-10.327" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
-											<DoubleAnimation Duration="0" To="23.525" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
-											<DoubleAnimation Duration="0" To="-3.662" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationZ)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
+											<ColorAnimation Duration="0" To="#FF3991DE" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button" d:IsOptimized="True"/>
+											<DoubleAnimation Duration="0" To="1.826" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
+											<DoubleAnimation Duration="0" To="43.249" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
+											<DoubleAnimation Duration="0" To="-1.763" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationZ)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
 										</Storyboard>
 									</VisualState>
 								</VisualStateGroup>
@@ -58,47 +73,12 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
-		<ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
-			<ec:PathPanel>
-				<i:Interaction.Behaviors>
-					<ei:FluidMoveBehavior AppliesTo="Children"/>
-				</i:Interaction.Behaviors>
-			</ec:PathPanel>
-		</ItemsPanelTemplate>
-		<Storyboard x:Name="waves" AutoReverse="True" RepeatBehavior="Forever">
-			<PointAnimation Duration="0:0:2" To="136.377969715273,-23.9660366683166" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="306.294990489317,9.27885266295684" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point3)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="476.212003633961,42.5237572531458" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="488.316513061523,69.5982928872108" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="621.294998168945,41.2790256142616" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="754.273513793945,12.9597621560097" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="809.105239868164,15.9661457836628" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="895.294998168945,28.2790238559246" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="981.48469543457,40.5918996036053" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)" Storyboard.TargetName="path" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="197.717916123509,80.1283563956214" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="267.900998244442,70.2780339929567" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point3)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="338.084080365373,60.427711590292" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="456.105743408203,21.0466842651367" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="518.901000976563,22.2779541015625" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="581.696258544922,23.509220123291" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="730.294970845216,32.2616149091269" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="810.328173970216,40.880547633126" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="890.361438130372,49.4995413922812" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="1017.18370375537,82.7441264295127" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="1062.74119887256,79.0502635144736" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-			<PointAnimation Duration="0:0:2" To="1108.29857191943,75.3564005994346" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[4].(BezierSegment.Point1)" Storyboard.TargetName="path1" d:IsOptimized="True"/>
-		</Storyboard>
 	</UserControl.Resources>
 
-	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource SearchViewModelDataSource}}" d:DataContext="{Binding Source={StaticResource TwitterSampleData}}" Margin="0" Background="Black">
-		<i:Interaction.Triggers>
-			<i:EventTrigger>
-				<ei:ControlStoryboardAction Storyboard="{StaticResource waves}"/>
-			</i:EventTrigger>
-		</i:Interaction.Triggers>
-		<Image x:Name="Background" Source="mockup_Images/Background.png"/>
-		<Image x:Name="Radial_Gradient" Source="mockup_Images/Radial Gradient.png" Margin="76,0,95,244"/>
-		<Canvas x:Name="sponsors" Height="46" Opacity="0.8" Margin="9,0,3,10" VerticalAlignment="Bottom">
+	<Grid x:Name="LayoutRoot" Background="Black" DataContext="{Binding Source={StaticResource SearchViewModelDataSource}}" d:DataContext="{Binding Source={StaticResource TwitterSampleData}}">
+		<Image x:Name="Background" Source="mockup_Images/Background.png" Margin="0,0,-2,-1"/>
+		<Image x:Name="Radial_Gradient" Source="mockup_Images/Radial Gradient.png" Margin="76,0,93,243"/>
+		<Canvas x:Name="sponsors" Height="46" Opacity="0.8" Margin="9,0,1,9" VerticalAlignment="Bottom">
 			<Image x:Name="Layer_1" Height="16" Canvas.Left="794" Source="mockup_Images/Layer 1.png" Canvas.Top="15" Width="134"/>
 			<Image x:Name="Layer_3" Height="45" Canvas.Left="708" Source="mockup_Images/Layer 3.png" Canvas.Top="1" Width="83"/>
 			<Image x:Name="Layer_4" Height="22" Canvas.Left="933" Source="mockup_Images/Layer 4.png" Canvas.Top="11" Width="79"/>
@@ -111,52 +91,28 @@
 			<Image x:Name="Layer_11" Height="26" Canvas.Left="93" Source="mockup_Images/Layer 11.png" Canvas.Top="9" Width="79"/>
 			<Image x:Name="Layer_12" Height="35" Canvas.Left="0" Source="mockup_Images/Layer 12.png" Canvas.Top="6" Width="87"/>
 		</Canvas>
-		<Image x:Name="logo" Height="62" Source="mockup_Images/logo.png" Margin="33,22,455,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-		<Canvas x:Name="Arrow" Height="151" Width="454" HorizontalAlignment="Right" Margin="0,-26,-30,0" VerticalAlignment="Top">
+		<Image x:Name="logo" Height="62" Source="mockup_Images/logo.png" Margin="33,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="536"/>
+		<Canvas x:Name="Arrow" Height="151" Width="454" HorizontalAlignment="Right" Margin="0,-26,-32,0" VerticalAlignment="Top">
 			<Path x:Name="outerglow" Data="F1M323.477,37.5C323.477,37.5 18.023,37.5 18.023,37.5 8.621,37.5 1,29.553 1,19.75 1,9.947 8.621,2 18.023,2 18.023,2 323.477,2 323.477,2 332.879,2 340.5,9.947 340.5,19.75 340.5,29.553 332.879,37.5 323.477,37.5z" Fill="#FF0F2537" Height="39" Canvas.Left="56" Canvas.Top="56" Width="342"/>
 			<Path x:Name="Arrow1" Data="F1M360.5,61.5C360.5,61.5 1,61.5 1,61.5 1,61.5 26.362,37.019 30.5,31 18.5,19.379 1,2 1,2 1,2 360.5,2 360.5,2 360.5,2 383.5,24.379 389.5,32 387.5,35.121 360.5,61.5 360.5,61.5z" Fill="#FF0F2537" Height="63" Canvas.Left="24" Canvas.Top="44" Width="391"/>
+			<TextBox Height="36" Canvas.Left="66" TextWrapping="Wrap" Text="{Binding Keyword, Mode=TwoWay}" Canvas.Top="59" Width="206" FontSize="18.667"/>
 		</Canvas>
-		<Canvas x:Name="Searchbutton" Height="37" Width="320" HorizontalAlignment="Right" Margin="0,32,37,0" VerticalAlignment="Top">
-			<Image x:Name="InputField" Height="32" Canvas.Left="0" Source="mockup_Images/InputField.png" Canvas.Top="2" Width="204"/>
-			<Button Content="Search!" Height="37" Canvas.Left="216" Style="{StaticResource ButtonStyle1}" Canvas.Top="0" Width="104" Foreground="White" FontFamily="Verdana" FontSize="21.333" DataContext="{Binding Source={StaticResource SearchViewModelDataSource}}">
+		<Canvas x:Name="Searchbutton" Height="37" Width="104" HorizontalAlignment="Right" Margin="0,32,35,0" VerticalAlignment="Top" DataContext="{Binding Source={StaticResource SearchViewModelDataSource}}">
+			<Button Content="Search" Height="37" Canvas.Left="0" Style="{StaticResource ButtonStyle1}" Canvas.Top="0" Width="104" Foreground="White" FontSize="18.667">
 				<i:Interaction.Triggers>
 					<i:EventTrigger EventName="Click">
-						<ei:CallMethodAction TargetObject="{Binding}" MethodName="Search"/>
+						<ei:CallMethodAction MethodName="Search" TargetObject="{Binding}"/>
 					</i:EventTrigger>
 				</i:Interaction.Triggers>
 			</Button>
-			<TextBox Height="35" TextWrapping="Wrap" Text="{Binding Keyword, Mode=TwoWay}" Canvas.Top="2" Width="204" FontSize="18.667" FontFamily="Verdana"/>
 		</Canvas>
-		<ec:PathListBox HorizontalAlignment="Right" Margin="0,326.29,115.314,136.339" Width="357.072" DataContext="{Binding}" ItemTemplate="{StaticResource TweetsItemTemplate}" ItemsSource="{Binding Tweets}" ItemsPanel="{StaticResource ItemsPanelTemplate1}">
+		<ec:PathListBox Height="267" Margin="342,0,404,126" VerticalAlignment="Bottom" ItemTemplate="{StaticResource TweetsItemTemplate1}" ItemsSource="{Binding Tweets}">
 			<ec:PathListBox.LayoutPaths>
-				<ec:LayoutPath SourceElement="{Binding ElementName=path}" Orientation="OrientToPath" Padding="50"/>
-				<ec:LayoutPath SourceElement="{Binding ElementName=path1}" Orientation="OrientToPath" Padding="27"/>
+				<ec:LayoutPath SourceElement="{Binding ElementName=path}" Orientation="OrientToPath" Padding="34"/>
+				<ec:LayoutPath SourceElement="{Binding ElementName=path1}" Orientation="OrientToPath" Padding="24"/>
 			</ec:PathListBox.LayoutPaths>
 		</ec:PathListBox>
-		<Path x:Name="path" Height="61.696" Margin="0,205.721,0,0" Stroke="White" UseLayoutRounding="False" VerticalAlignment="Top">
-			<Path.Data>
-				<PathGeometry FillRule="EvenOdd">
-					<PathFigure IsFilled="True" IsClosed="False" StartPoint="0.500000298023224,47.922534942627">
-						<BezierSegment Point3="298.470031738281,35.6097221374512" Point2="128.553024291992,2.36483263969421" Point1="0.500000298023224,47.922534942627"/>
-						<BezierSegment Point3="547.18896484375,40.5349922180176" Point2="414.210479736328,68.8542556762695" Point1="468.387054443359,68.854621887207"/>
-						<BezierSegment Point3="852.546691894531,12.2155933380127" Point2="766.35693359375,-0.0972850024700165" Point1="680.16748046875,12.2157306671143"/>
-						<BezierSegment Point3="1336.64892528147,28.3813611033507" Point2="1190.12640330882,40.6941929820128" Point1="938.736389160156,24.5284690856934"/>
-					</PathFigure>
-				</PathGeometry>
-			</Path.Data>
-		</Path>
-		<Path x:Name="path1" Height="79.836" Margin="0,0,0,188.442" Stroke="White" UseLayoutRounding="False" VerticalAlignment="Bottom">
-			<Path.Data>
-				<PathGeometry FillRule="EvenOdd">
-					<PathFigure IsFilled="True" IsClosed="False" StartPoint="0.500000953674316,75.3000030517578">
-						<BezierSegment Point3="251.681533813477,1.65412080287933" Point2="181.498458862305,11.5044431686401" Point1="0.500000953674316,75.3000030517578"/>
-						<BezierSegment Point3="509.018524169922,49.4432029724121" Point2="446.223266601563,48.2119331359863" Point1="321.864624023438,-8.19620132446289"/>
-						<BezierSegment Point3="792.213562011719,19.8924179077148" Point2="712.180358886719,11.2734851837158" Point1="571.813781738281,50.6744689941406"/>
-						<BezierSegment Point3="1044.62658691406,58.0621337890625" Point2="999.069091796875,61.7559967041016" Point1="872.246826171875,28.5114116668701"/>
-						<BezierSegment Point3="1338.8065506653,27.4428053107209" Point2="1328.95620886843,28.6740713324494" Point1="1090.18395996094,54.3682708740234"/>
-					</PathFigure>
-				</PathGeometry>
-			</Path.Data>
-		</Path>
+		<Path x:Name="path" Data="M0,286.86514 C0,286.86514 154.46585,228.02116 288.70404,261.121 C422.94223,294.22083 599.47467,318.12662 652.80219,288.70419 C706.1297,259.28177 834.85138,229.85942 910.24548,251.92616 C985.63953,273.99292 1046.3228,285.02631 1064.7115,285.02631" Height="58.792" Margin="-0.5,243.722,-47.211,0" Stretch="Fill" Stroke="White" UseLayoutRounding="False" VerticalAlignment="Top"/>
+		<Path x:Name="path1" Data="M0,669.35199 C0,669.35199 180.21016,545.14709 292.38177,585.60248 C404.55341,626.0578 753.93994,674.86871 807.2674,665.67432 C860.59485,656.47986 906.56677,590.27991 1000.3495,608.66882 C1094.1322,627.05768 1108.8436,673.02985 1119.8768,673.02985" Height="96.529" Margin="-0.5,0,-102.377,147.47" Stretch="Fill" Stroke="White" UseLayoutRounding="False" VerticalAlignment="Bottom"/>
 	</Grid>
 </UserControl>

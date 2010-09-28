@@ -98,6 +98,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
 				}
 			}
 		}
+
+		private System.Windows.Media.ImageSource _Property3 = null;
+
+		public System.Windows.Media.ImageSource Property3
+		{
+			get
+			{
+				return this._Property3;
+			}
+
+			set
+			{
+				if (this._Property3 != value)
+				{
+					this._Property3 = value;
+					this.OnPropertyChanged("Property3");
+				}
+			}
+		}
 	}
 
 	public class ItemCollection : System.Collections.ObjectModel.ObservableCollection<Item>

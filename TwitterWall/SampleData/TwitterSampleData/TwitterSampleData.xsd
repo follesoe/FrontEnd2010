@@ -19,9 +19,9 @@
   </xs:complexType>
   <xs:complexType name="TweetsItem">
     <xs:attribute blend:Format="Date" name="CreatedAt" type="xs:string" />
-    <xs:attribute blend:Format="Name" name="FromUser" type="xs:string" />
-    <xs:attribute blend:FormatParameters="14,8" name="Text" type="xs:string" />
+    <xs:attribute blend:FormatParameters="12,8" name="Text" type="xs:string" />
     <xs:attribute blend:FormatParameters="..\assets\Profile photos" name="ProfileImage" type="tns:Basic-Image" />
+    <xs:attribute blend:Format="Name" name="FromUser" type="xs:string" />
   </xs:complexType>
   <xs:simpleType name="Basic-Image">
     <xs:restriction base="xs:anyURI" />
